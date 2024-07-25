@@ -1,0 +1,34 @@
+<nav class="navbar navbar-expand-md navbar-dark bg-dark">
+    <a class="navbar-brand pl-3" href="" routerLink="/">Ajith</a>
+    <button class="navbar-toggler mr-3" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon "></span>
+    </button>
+
+    <div class="collapse navbar-collapse justify-content-center" id="navbarsExampleDefault">
+
+      <ul class="navbar-nav ml-auto pr-3 d-flex justify-content-center align-items-center">
+        
+        <ng-container *ngIf="auth.isAuthenticated(); then authenticated; else notauthenticated"></ng-container>
+          
+        <ng-template #notauthenticated>
+          <li class="nav-item" routerLink="/register">
+            <a class="nav-link">Register</a>
+          </li>
+          <li class="nav-item" routerLink="/login">
+            <a class="nav-link">Login</a>
+          </li>
+        </ng-template>
+      
+        <ng-template #authenticated>
+          <li class="nav-item" routerLink="/dashboard">
+            <a class="nav-link">Dashboard</a>
+          </li>
+          <li class="nav-item" >
+            <a class="nav-link" (click)="logout()">Logout</a>
+          </li>
+        </ng-template>
+      </ul>
+    </div>
+    
+  </nav>
+  
