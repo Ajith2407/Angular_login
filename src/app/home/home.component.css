@@ -1,0 +1,26 @@
+/* home-page.component.css */
+@keyframes gradientAnimation {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+  }
+  
+  .gradient-text {
+    font-size: 2rem;
+    font-weight: bold;
+    background: linear-gradient(45deg, #ff6f61, #d5d5d5, #6a1b9a, #ffca28);
+    background-size: 400% 400%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: gradientAnimation 10s ease infinite;
+  }
+
+  /* home-page.component.css */
+
+/* HTML: <div class="loader"></div> */
