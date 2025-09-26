@@ -1,0 +1,41 @@
+/* Gradient background */
+.bg-gradient {
+  background: linear-gradient(90deg, #a3b0ca, #243b55);
+}
+
+/* Brand */
+.navbar-brand {
+  font-size: 1.5rem;
+  letter-spacing: 1px;
+  transition: color 0.3s ease-in-out;
+}
+.navbar-brand:hover {
+  color: #ffcc00;
+}
+
+/* Glassmorphism buttons */
+.btn-glass {
+  position: relative;
+  padding: 8px 20px;
+  border-radius: 25px;
+  background: rgba(255, 255, 255, 0.1);
+  color: #c36262 !important;
+  text-decoration: none;
+  font-weight: 500;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  transition: all 0.3s ease-in-out;
+  overflow: hidden;
+}
+
+.btn-glass:hover {
+  background: rgba(255, 255, 255, 0.25);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+}
+
+/* Active link highlight */
+.nav-item .nav-link.active {
+  font-weight: bold;
+  color: #ffcc00 !important;
+}

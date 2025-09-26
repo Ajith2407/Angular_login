@@ -1,9 +1,49 @@
 <app-navbar></app-navbar>
-<main role="main" class="container mt-5">
-  <div class="container">
-    <div class="text-center mt-5">
-      <h3>Dashboard page</h3>
-      <p class="text-bold " [innerText]="'Hey Hi '+this.user.displayName+', your Firebase ID is '+this.user.localId" ></p>
+
+<main role="main" class="dashboard-container">
+  <div class="dashboard-card text-center">
+    <!-- Welcome -->
+    <h2 class="welcome-title">Welcome 🎉</h2>
+    <h4 class="username">Hey <span>{{ user.displayName }}</span></h4>
+    <p class="user-info">
+      Your Firebase ID: <code>{{ user.localId }}</code>
+    </p>
+
+    <!-- Quick Actions -->
+    <div class="actions mt-4">
+      <button class="btn btn-primary mx-2 shadow-sm">
+        <i class="fas fa-user-circle"></i> Profile
+      </button>
+      <button class="btn btn-success mx-2 shadow-sm">
+        <i class="fas fa-chart-line"></i> Reports
+      </button>
+      <button class="btn btn-danger mx-2 shadow-sm" routerLink="/login" >
+        <i class="fas fa-sign-out-alt"></i> Logout
+      </button>
+    </div>
+  </div>
+
+  <!-- Stats Section -->
+  <div class="stats-container mt-5">
+    <div class="stat-card users">
+      <i class="fas fa-users stat-icon"></i>
+      <h3>1,250</h3>
+      <p>Total Users</p>
+    </div>
+    <div class="stat-card reports">
+      <i class="fas fa-file-alt stat-icon"></i>
+      <h3>87</h3>
+      <p>Reports</p>
+    </div>
+    <div class="stat-card activity">
+      <i class="fas fa-bolt stat-icon"></i>
+      <h3>342</h3>
+      <p>Active Sessions</p>
+    </div>
+    <div class="stat-card revenue">
+      <i class="fas fa-coins stat-icon"></i>
+      <h3>$5.6k</h3>
+      <p>Revenue</p>
     </div>
   </div>
 </main>

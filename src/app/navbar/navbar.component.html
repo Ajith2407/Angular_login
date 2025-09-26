@@ -1,34 +1,49 @@
-<nav class="navbar navbar-expand-md navbar-dark bg-dark">
-    <a class="navbar-brand pl-3" href="" routerLink="/">Ajith</a>
-    <button class="navbar-toggler mr-3" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon "></span>
-    </button>
+<nav class="navbar navbar-expand-md navbar-dark bg-gradient shadow-sm">
+  <a class="navbar-brand pl-3 font-weight-bold" routerLink="/">
+    <i class="fas fa-code"></i> Ajith
+  </a>
 
-    <div class="collapse navbar-collapse justify-content-center" id="navbarsExampleDefault">
+  <!-- Toggler -->
+  <button
+    class="navbar-toggler mr-3"
+    type="button"
+    data-toggle="collapse"
+    data-target="#navbarsExampleDefault"
+    aria-controls="navbarsExampleDefault"
+    aria-expanded="false"
+    aria-label="Toggle navigation"
+  >
+    <span class="navbar-toggler-icon"></span>
+  </button>
 
-      <ul class="navbar-nav ml-auto pr-3 d-flex justify-content-center align-items-center">
-        
-        <ng-container *ngIf="auth.isAuthenticated(); then authenticated; else notauthenticated"></ng-container>
-          
-        <ng-template #notauthenticated>
-          <li class="nav-item" routerLink="/register">
-            <a class="nav-link">Register</a>
-          </li>
-          <li class="nav-item" routerLink="/login">
-            <a class="nav-link">Login</a>
-          </li>
-        </ng-template>
+  <!-- Menu -->
+  <div class="collapse navbar-collapse justify-content-end" id="navbarsExampleDefault">
+    <ul class="navbar-nav align-items-center">
       
-        <ng-template #authenticated>
-          <li class="nav-item" routerLink="/dashboard">
-            <a class="nav-link">Dashboard</a>
-          </li>
-          <li class="nav-item" >
-            <a class="nav-link" (click)="logout()">Logout</a>
-          </li>
-        </ng-template>
-      </ul>
-    </div>
-    
-  </nav>
-  
+      <ng-container *ngIf="auth.isAuthenticated(); then authenticated; else notauthenticated"></ng-container>
+
+      <!-- Not logged in -->
+      <ng-template #notauthenticated>
+        <li class="nav-item mx-2" routerLink="/" routerLinkActive="active">
+          <a class="nav-link btn-glass">Home</a>
+        </li>
+        <li class="nav-item mx-2" routerLink="/register" routerLinkActive="active">
+          <a class="nav-link btn-glass">Register</a>
+        </li>
+        <li class="nav-item mx-2" routerLink="/login" routerLinkActive="active">
+          <a class="nav-link btn-glass">Login</a>
+        </li>
+      </ng-template>
+
+      <!-- Logged in -->
+      <ng-template #authenticated>
+        <li class="nav-item mx-2" routerLink="/dashboard" routerLinkActive="active">
+          <a class="nav-link btn btn-outline-light px-3 rounded-pill">Dashboard</a>
+        </li>
+        <li class="nav-item mx-2">
+          <a class="nav-link btn btn-danger px-3 rounded-pill" (click)="logout()">Logout</a>
+        </li>
+      </ng-template>
+    </ul>
+  </div>
+</nav>

@@ -1,72 +1,75 @@
+/* Background */
 .register-block {
+  background: linear-gradient(135deg, #1f1c2c, #928dab);
+  min-height: 100vh;
   display: flex;
-  justify-content: center; /* Center horizontally */
-  align-items: center;     /* Center vertically */
-  height: 100vh;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Card */
+.register-card {
   width: 100%;
-  background: radial-gradient(circle, rgba(238, 174, 202, 1) 0%, rgba(148, 187, 233, 1) 100%);
-  border: 3px solid rgb(128, 0, 26);
+  max-width: 450px;
+  border-radius: 20px;
+  background: #fff;
+  padding: 30px;
+  animation: fadeInUp 1s ease;
 }
 
-/* Container styling */
-.container {
-  border: 1px solid rgb(179, 176, 176); 
+/* Title Gradient */
+.gradient-text {
+  background: linear-gradient(90deg, #ff8a00, #e52e71, #9b00ff, #00c6ff);
+  background-size: 300% 300%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: gradientShift 6s ease infinite;
+  font-weight: 700;
+}
+
+/* Input Fields */
+.form-control {
   border-radius: 10px;
-  width: 90%;
-  max-width: 400px; /* Responsive max width */
-  padding: 20px;
-  background: radial-gradient(circle, rgba(238, 174, 202, 1) 0%, rgba(148, 187, 233, 1) 100%);
-  box-shadow: 0px 20px 32px 20px rgba(83, 84, 88, 0.37); 
+  padding: 12px;
+  transition: all 0.3s ease;
 }
-  .register-sec{padding: 27px 30px; position:relative;}
-  .register-sec h2{margin-bottom:30px; font-weight:800; font-size:30px; color: #050209;}
-  
-  .btn-login {
-  position: relative;
-  overflow: hidden;
-  background: linear-gradient(135deg, #00bcd4, #2196f3); /* Aqua-Blue gradient */
-  color: #fff;
-  font-weight: 600;
+.form-control:focus {
+  border-color: #ff8a00;
+  box-shadow: 0 0 10px rgba(255, 138, 0, 0.3);
+}
+
+/* Submit Button */
+.btn-gradient {
+  background: linear-gradient(90deg, #ff8a00, #e52e71);
   border: none;
-  padding: 12px 28px;
-  border-radius: 8px;
-  cursor: pointer;
-  transition: background 0.3s ease;
+  padding: 12px;
+  border-radius: 30px;
+  font-weight: bold;
+  color: #fff;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.btn-gradient:hover {
+  transform: scale(1.05);
+  box-shadow: 0px 5px 20px rgba(229, 46, 113, 0.6);
 }
 
-/* Hover style */
-.btn-login:hover {
-  background: linear-gradient(135deg, #2196f3, #00bcd4);
+/* Login Link */
+.login-link {
+  color: #e52e71;
+  font-weight: 600;
+  text-decoration: none;
+}
+.login-link:hover {
+  text-decoration: underline;
 }
 
-/* Water-drop (ripple) effect */
-.btn-login::after {
-  content: "";
-  position: absolute;
-  background: rgba(255, 255, 255, 0.6);
-  border-radius: 50%;
-  transform: scale(0);
-  pointer-events: none;
-  animation: none;
+/* Animations */
+@keyframes gradientShift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
 }
-
-.btn-login:active::after {
-  top: 50%;
-  left: 50%;
-  width: 200px;
-  height: 200px;
-  transform: translate(-50%, -50%) scale(1);
-  animation: rippleWater 0.6s ease-out;
-}
-
-/* Ripple animation */
-@keyframes rippleWater {
-  0% {
-    opacity: 1;
-    transform: translate(-50%, -50%) scale(0);
-  }
-  100% {
-    opacity: 0;
-    transform: translate(-50%, -50%) scale(1.5);
-  }
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
 }

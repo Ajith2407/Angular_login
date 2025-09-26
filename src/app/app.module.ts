@@ -14,9 +14,12 @@ import {HttpClientModule} from '@angular/common/http';
 
 const routes:Routes =[
   {path:'',component:HomeComponent},
-  {path:'register',component:RegisterComponent},
+  {path:'register',
+    component:RegisterComponent
+  },
   {path:'login',component:LoginComponent},
-  {path:'dashboard',component:DashboardComponent}
+  {path:'dashboard',component:DashboardComponent},
+  {path:'**',redirectTo:'login'}
 ]
 
 @NgModule({

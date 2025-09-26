@@ -1,0 +1,122 @@
+/* Background */
+.dashboard-container {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: linear-gradient(135deg, #141e30, #243b55);
+  padding: 30px 20px;
+  color: #fff;
+}
+
+/* Welcome card */
+.dashboard-card {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(15px);
+  border-radius: 20px;
+  padding: 40px 30px;
+  max-width: 650px;
+  width: 100%;
+  text-align: center;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
+  animation: fadeInUp 0.8s ease-in-out;
+}
+
+/* Titles */
+.welcome-title {
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 10px;
+  color: #ffcc00;
+}
+.username {
+  font-size: 1.3rem;
+  font-weight: 500;
+}
+.username span {
+  color: #00eaff;
+  font-weight: bold;
+}
+
+/* Firebase ID */
+.user-info code {
+  background: rgba(255, 255, 255, 0.2);
+  padding: 4px 8px;
+  border-radius: 6px;
+  font-size: 0.9rem;
+  color:#fff;
+}
+
+/* Buttons */
+.actions .btn {
+  border-radius: 25px;
+  padding: 10px 20px;
+  font-weight: 500;
+  transition: all 0.3s ease-in-out;
+}
+.actions .btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.4);
+}
+
+/* Stats Section */
+.stats-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 20px;
+  margin-top: 40px;
+  width: 100%;
+  max-width: 900px;
+}
+
+/* Each stat card */
+.stat-card {
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(10px);
+  border-radius: 15px;
+  padding: 25px;
+  text-align: center;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s ease-in-out;
+}
+.stat-card:hover {
+  transform: translateY(-5px);
+}
+
+/* Stat numbers */
+.stat-card h3 {
+  font-size: 1.8rem;
+  margin: 10px 0;
+  font-weight: bold;
+}
+
+/* Stat text */
+.stat-card p {
+  font-size: 0.9rem;
+  opacity: 0.9;
+}
+
+/* Icons */
+.stat-icon {
+  font-size: 2rem;
+  margin-bottom: 10px;
+  display: block;
+}
+
+/* Colors */
+.stat-card.users { border-left: 5px solid #00eaff; }
+.stat-card.reports { border-left: 5px solid #ffcc00; }
+.stat-card.activity { border-left: 5px solid #4caf50; }
+.stat-card.revenue { border-left: 5px solid #ff5722; }
+
+/* Animations */
+@keyframes fadeInUp {
+  from {
+    transform: translateY(40px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
